@@ -1,2 +1,2 @@
 # Groupinvest
-Fundo de investimento familiar
+Projeto final do módulo Xamarim da Pós Graduação em Desenvolvimento Mobile
