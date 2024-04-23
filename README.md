@@ -137,6 +137,6 @@ Visão que fornece as principais regras de funcionamento do fundo de reserva. É
 <p>:top: <a href="#top">Voltar ao topo</a></p>
 
 ## Vídeo de Apresentação
-:clapper: [Demonstração no Youtube](https://youtu.be/3A5YSiEw6X0)
+<span><a href="https://youtu.be/3A5YSiEw6X0"><img src="https://img.shields.io/badge/YouTube-FF0000?style=for-the-badge&logo=youtube&logoColor=white"></a></span>
 
 <p><a href="#top">:top: Voltar ao topo</a></p>
