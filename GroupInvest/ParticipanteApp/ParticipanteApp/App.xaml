@@ -1,0 +1,73 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Application xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:components="clr-namespace:ParticipanteApp.Components"
+             mc:Ignorable="d"
+             x:Class="ParticipanteApp.App">
+    <Application.Resources>
+        <!--Cores-->
+        <Color x:Key="CorFundoDestaque">#346FB7</Color>
+        <Color x:Key="CorTexto">#000000</Color>
+        <Color x:Key="CorTextoPainelDestaque">#FFFFFF</Color>
+        <Color x:Key="CorLinhaEntryImagem">#FFFFFF</Color>
+        <Color x:Key="CorLinhaSeparador">#FFFFFF</Color>
+
+        <!--Componentes-->
+        <Style TargetType="{x:Type components:GradientColorStack}">
+            <Setter Property="StartColor" Value="#FFFFFF"/>
+            <Setter Property="EndColor" Value="#D8E2EF"/>
+        </Style>
+
+        <Style TargetType="{x:Type ActivityIndicator}">
+            <Setter Property="Color" Value="#FFFFFF"/>
+            <Setter Property="VerticalOptions" Value="Center"/>
+            <Setter Property="HorizontalOptions" Value="Center"/>
+        </Style>
+
+        <Style TargetType="{x:Type components:CustomEntry}">
+            <Setter Property="BorderColor" Value="#000000"/>
+            <Setter Property="BorderNone" Value="True"/>
+            <Setter Property="TextColor" Value="#FFFFFF"/>
+        </Style>
+
+        <Style TargetType="{x:Type Button}">
+            <Setter Property="BackgroundColor" Value="#346FB7"/>
+            <Setter Property="TextColor" Value="#FFFFFF"/>
+            <Setter Property="CornerRadius" Value="25"/>
+            <Setter Property="BorderWidth" Value="0"/>
+            <Setter Property="FontSize" Value="14"/>
+        </Style>
+
+        <Style TargetType="{x:Type Label}">
+            <Setter Property="TextColor" Value="{StaticResource CorTexto}"/>
+            <Setter Property="FontSize" Value="14"/>
+        </Style>
+
+        <Style TargetType="{x:Type Label}" x:Key="texto_item_lista">
+            <Setter Property="FontSize" Value="14"/>
+        </Style>
+
+        <Style TargetType="{x:Type Label}" x:Key="texto_destaque">
+            <Setter Property="TextColor" Value="#FFFFFF"/>
+            <Setter Property="FontSize" Value="14"/>
+        </Style>
+
+        <Style TargetType="{x:Type Frame}">
+            <Setter Property="BorderColor" Value="{StaticResource CorFundoDestaque}"/>
+        </Style>
+
+        <Style TargetType="{x:Type Frame}" x:Key="painel_destaque">
+            <Setter Property="BackgroundColor" Value="{StaticResource CorFundoDestaque}"/>
+            <Setter Property="CornerRadius" Value="5"/>
+        </Style>
+
+        <Style TargetType="{x:Type Frame}" x:Key="background_loading">
+            <Setter Property="AbsoluteLayout.LayoutFlags" Value="All"/>
+            <Setter Property="AbsoluteLayout.LayoutBounds" Value="0,0,1,1"/>
+            <Setter Property="Opacity" Value="0.7"/>
+            <Setter Property="BackgroundColor" Value="{StaticResource CorFundoDestaque}"/>
+        </Style>
+    </Application.Resources>
+</Application>

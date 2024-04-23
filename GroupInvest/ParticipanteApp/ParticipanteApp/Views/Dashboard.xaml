@@ -1,0 +1,79 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:components="clr-namespace:ParticipanteApp.Components"
+             xmlns:microcharts="clr-namespace:Microcharts;assembly=Microcharts"
+             xmlns:microcharts1="clr-namespace:Microcharts.Forms;assembly=Microcharts.Forms"
+             mc:Ignorable="d"
+             x:Class="ParticipanteApp.Views.Dashboard">
+    <ContentPage.Resources>
+        <Style TargetType="{x:Type Label}" x:Key="texto_painel_destaque">
+            <Setter Property="TextColor" Value="{StaticResource CorTextoPainelDestaque}"/>
+            <Setter Property="FontSize" Value="18"/>
+        </Style>
+    </ContentPage.Resources>
+    <ContentPage.Content>
+        <AbsoluteLayout>
+            <components:GradientColorStack AbsoluteLayout.LayoutFlags="All" AbsoluteLayout.LayoutBounds="0,0,1,1">
+                <Grid VerticalOptions="FillAndExpand" RowSpacing="0" ColumnSpacing="0">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="3*"/>
+                        <RowDefinition Height="4*"/>
+                        <RowDefinition Height="1*"/>
+                        <RowDefinition Height="5*"/>
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="1*"/>
+                        <ColumnDefinition Width="1*"/>
+                    </Grid.ColumnDefinitions>
+                    <Frame Grid.Row="0" Grid.Column="0" Style="{StaticResource painel_destaque}"  VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand" Margin="20, 10, 5, 10">
+                        <StackLayout VerticalOptions="Center" HorizontalOptions="Center">
+                            <Label Text="Saldo Acumulado" Style="{StaticResource texto_destaque}"  HorizontalTextAlignment="Center"/>
+                            <Label x:Name="labelSaldoAcumulado" Text="{Binding Dashboard.SaldoAcumulado, StringFormat='{0:C}'}" Style="{StaticResource texto_painel_destaque}"  HorizontalTextAlignment="Center"/>
+                        </StackLayout>
+                    </Frame>
+                    <Frame Grid.Row="0" Grid.Column="1" Style="{StaticResource painel_destaque}" VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand" Margin="5, 10, 20, 10">
+                        <StackLayout VerticalOptions="Center" HorizontalOptions="Center">
+                            <Label Text="Rendimento Parcial" Style="{StaticResource texto_destaque}" HorizontalTextAlignment="Center"/>
+                            <Label x:Name="labelRendimentoParcial" Text="{Binding Dashboard.RendimentoParcial, StringFormat='{0:N2}%'}" Style="{StaticResource texto_painel_destaque}"  HorizontalTextAlignment="Center"/>
+                        </StackLayout>
+                    </Frame>
+                    <Frame Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="2" Margin="20,0,20,0" BackgroundColor="{StaticResource CorFundoDestaque}" CornerRadius="10">
+                        <microcharts1:ChartView x:Name="lineView" />
+                    </Frame>
+                    <Label Grid.Row="2" Grid.Column="0" Grid.ColumnSpan="2" Text="Transações recentes" VerticalTextAlignment="Center" HorizontalTextAlignment="Center" />
+                    <ListView x:Name="listviewExtrato"  Grid.Row="3" Grid.Column="0" Grid.ColumnSpan="2" SeparatorVisibility="None" SelectionMode="None" ItemsSource="{Binding Dashboard.UltimasTransacoes}">
+                        <ListView.ItemTemplate>
+                            <DataTemplate>
+                                <ViewCell>
+                                    <Frame Padding="0" Margin="20, 0, 20, 5">
+                                        <Grid>
+                                            <Grid.RowDefinitions>
+                                                <RowDefinition Height="Auto"/>
+                                            </Grid.RowDefinitions>
+                                            <Grid.ColumnDefinitions>
+                                                <ColumnDefinition Width="Auto"/>
+                                                <ColumnDefinition Width="Auto"/>
+                                                <ColumnDefinition Width="*"/>
+                                                <ColumnDefinition Width="Auto"/>
+                                            </Grid.ColumnDefinitions>
+                                            <Image Grid.Row="0" Grid.Column="0" Source="{Binding Icone}" VerticalOptions="Center" Margin="10,10,0,10"/>
+                                            <Label Grid.Row="0" Grid.Column="1" Text="{Binding DataTransacao, StringFormat='{0:dd/MM}'}" Style="{StaticResource texto_item_lista}" VerticalOptions="Center"/>
+                                            <Label Grid.Row="0" Grid.Column="2" Text="{Binding Descricao}" Style="{StaticResource texto_item_lista}" VerticalOptions="Center"/>
+                                            <Label Grid.Row="0" Grid.Column="3" Text="{Binding ValorTransacao, StringFormat='{0:C}'}" Style="{StaticResource texto_item_lista}"  HorizontalTextAlignment="End" VerticalOptions="Center" Margin="0,0,10,0"/>
+                                        </Grid>
+                                    </Frame>
+                                </ViewCell>
+                            </DataTemplate>
+                        </ListView.ItemTemplate>
+                    </ListView>
+                </Grid>
+            </components:GradientColorStack>
+            <Frame Style="{StaticResource background_loading}" IsVisible="{Binding IsLoading}">
+                <components:CustomActivityIndicator IsRunning="{Binding IsLoading}"/>
+            </Frame>
+        </AbsoluteLayout>
+    </ContentPage.Content>
+</ContentPage>

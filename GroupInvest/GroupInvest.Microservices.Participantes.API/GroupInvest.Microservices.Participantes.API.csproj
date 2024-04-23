@@ -1,0 +1,23 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>net6.0</TargetFramework>
+    <UserSecretsId>2329c136-29f3-40f7-82e1-46384a0a296c</UserSecretsId>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="IdentityServer4.AccessTokenValidation" Version="3.0.1" />
+    <PackageReference Include="Microsoft.AspNetCore.Mvc.NewtonsoftJson" Version="3.1.8" />
+    <PackageReference Include="Microsoft.AspNetCore.Mvc.Versioning" Version="4.1.1" />
+    <PackageReference Include="Microsoft.AspNetCore.Mvc.Versioning.ApiExplorer" Version="4.1.1" />
+    <PackageReference Include="Swashbuckle.AspNetCore" Version="6.4.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\GroupInvest.Common.Infrastructure.Messaging\GroupInvest.Common.Infrastructure.Messaging.csproj" />
+    <ProjectReference Include="..\GroupInvest.Microservices.Participantes.Application\GroupInvest.Microservices.Participantes.Application.csproj" />
+    <ProjectReference Include="..\GroupInvest.Microservices.Participantes.Infra.DataAccess\GroupInvest.Microservices.Participantes.Infra.DataAccess.csproj" />
+  </ItemGroup>
+
+
+</Project>

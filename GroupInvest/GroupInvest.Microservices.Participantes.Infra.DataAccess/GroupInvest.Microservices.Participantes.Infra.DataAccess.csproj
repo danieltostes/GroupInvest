@@ -1,0 +1,29 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netstandard2.1</TargetFramework>
+    <UserSecretsId>5dc28520-64fa-49b7-b523-29c30f1d2214</UserSecretsId>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Remove="Migrations\20200830075214_add-column-usuarioappid.cs" />
+    <Compile Remove="Migrations\20200830075214_add-column-usuarioappid.Designer.cs" />
+    <Compile Remove="Migrations\20200830090027_alter-column-userappid-null.cs" />
+    <Compile Remove="Migrations\20200830090027_alter-column-userappid-null.Designer.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\GroupInvest.Common.Infrastructure.DataAccess\GroupInvest.Common.Infrastructure.DataAccess.csproj" />
+    <ProjectReference Include="..\GroupInvest.Microservices.Participantes.Domain\GroupInvest.Microservices.Participantes.Domain.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.EntityFrameworkCore" Version="3.1.32" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="3.1.32">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+    </PackageReference>
+    <PackageReference Include="Pomelo.EntityFrameworkCore.MySql" Version="3.2.7" />
+  </ItemGroup>
+
+</Project>

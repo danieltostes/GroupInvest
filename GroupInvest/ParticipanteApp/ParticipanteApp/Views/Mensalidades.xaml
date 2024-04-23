@@ -1,0 +1,33 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:components="clr-namespace:ParticipanteApp.Components"
+             xmlns:contents="clr-namespace:ParticipanteApp.Views.Contents"
+             mc:Ignorable="d"
+             x:Class="ParticipanteApp.Views.Mensalidades">
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <DataTemplate x:Key="Mensalidade">
+                <contents:ViewMensalidade/>
+            </DataTemplate>
+            <DataTemplate x:Key="MensalidadePaga">
+                <contents:ViewMensalidadePaga/>
+            </DataTemplate>
+            <contents:MensalidadeTemplateSelector x:Key="MensalidadeTemplateSelector"
+                                                  Mensalidade="{StaticResource Mensalidade}"
+                                                  MensalidadePaga="{StaticResource MensalidadePaga}"/>
+        </ResourceDictionary>
+    </ContentPage.Resources>
+    <ContentPage.Content>
+        <AbsoluteLayout>
+            <components:GradientColorStack VerticalOptions="FillAndExpand" AbsoluteLayout.LayoutFlags="All" AbsoluteLayout.LayoutBounds="0,0,1,1">
+                <CollectionView x:Name="collectionView" Margin="20,10,20,0" ItemTemplate="{StaticResource MensalidadeTemplateSelector}" ItemsSource="{Binding Mensalidades}"/>
+            </components:GradientColorStack>
+            <Frame Style="{StaticResource background_loading}" IsVisible="{Binding IsLoading}">
+                <components:CustomActivityIndicator IsRunning="{Binding IsLoading}" />
+            </Frame>
+        </AbsoluteLayout>
+    </ContentPage.Content>
+</ContentPage>

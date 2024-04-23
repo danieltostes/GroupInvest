@@ -1,0 +1,97 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:components="clr-namespace:ParticipanteApp.Components"
+             xmlns:contents="clr-namespace:ParticipanteApp.Views.Contents"
+             mc:Ignorable="d"
+             x:Class="ParticipanteApp.Views.DetalhamentoEmprestimo">
+    <ContentPage.Content>
+        <components:GradientColorStack VerticalOptions="FillAndExpand">
+            <Grid VerticalOptions="FillAndExpand" RowSpacing="0">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="*"/>
+                </Grid.RowDefinitions>
+                <Frame Grid.Row="0" Margin="20,20,20,0" Padding="10">
+                    <Grid VerticalOptions="FillAndExpand">
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="Auto"/>
+                            <RowDefinition Height="*"/>
+                        </Grid.RowDefinitions>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="*"/>
+                            <ColumnDefinition Width="Auto"/>
+                            <ColumnDefinition Width="*"/>
+                        </Grid.ColumnDefinitions>
+
+                        <StackLayout Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="3" Orientation="Horizontal" HorizontalOptions="Center">
+                            <Image Source="icone_informacao.png"/>
+                            <Label Text="Informações do empréstimo"/>
+                        </StackLayout>
+
+                        <StackLayout Grid.Row="1" Grid.Column="0" Spacing="0">
+                            <Label Text="Data" Style="{StaticResource texto_item_lista}"/>
+                            <Label x:Name="labelData" Text="{Binding Data, StringFormat='{0:d}'}" Style="{StaticResource texto_item_lista}"/>
+                        </StackLayout>
+
+                        <StackLayout Grid.Row="1" Grid.Column="1" Spacing="0">
+                            <Label Text="Valor" Style="{StaticResource texto_item_lista}"/>
+                            <Label x:Name="labelValor" Text="{Binding ValorEmprestimo, StringFormat='{0:C}'}" Style="{StaticResource texto_item_lista}"/>
+                        </StackLayout>
+
+                        <StackLayout Grid.Row="1" Grid.Column="2" Spacing="0">
+                            <Label Text="Saldo" Style="{StaticResource texto_item_lista}" HorizontalTextAlignment="End"/>
+                            <Label x:Name="labelSaldo" Text="{Binding SaldoEmprestimo, StringFormat='{0:C}'}" Style="{StaticResource texto_item_lista}" HorizontalTextAlignment="End"/>
+                        </StackLayout>
+                    </Grid>
+                </Frame>
+                <ListView x:Name="listViewPagamentos" Grid.Row="1" ItemsSource="{Binding Pagamentos}" SeparatorVisibility="None" SelectionMode="None" RowHeight="140">
+                    <ListView.ItemTemplate>
+                        <DataTemplate>
+                            <ViewCell>
+                                <Grid VerticalOptions="FillAndExpand" Margin="20,10,20,0">
+                                    <Grid.RowDefinitions>
+                                        <RowDefinition Height="Auto"/>
+                                        <RowDefinition Height="Auto"/>
+                                        <RowDefinition Height="Auto"/>
+                                        <RowDefinition Height="Auto"/>
+                                        <RowDefinition Height="Auto"/>
+                                    </Grid.RowDefinitions>
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="Auto"/>
+                                        <ColumnDefinition Width="Auto"/>
+                                        <ColumnDefinition Width="*"/>
+                                        <ColumnDefinition Width="Auto"/>
+                                    </Grid.ColumnDefinitions>
+
+                                    <Label Text="{Binding DataPagamento, StringFormat='{0:d}'}" Grid.Row="0" Grid.Column="0" FontAttributes="Bold"/>
+                                    <Image Grid.Row="0" Grid.Column="1" Source="icone_separador_extrato.png" Margin="5" VerticalOptions="Center" HorizontalOptions="Center"/>
+                                    <Label Text="{Binding Descricao}"  Grid.Row="0" Grid.Column="2" FontAttributes="Bold"/>
+                                    <Label Text="{Binding ValorPago, StringFormat='{0:C}'}" Grid.Row="0" Grid.Column="3" FontAttributes="Bold" HorizontalTextAlignment="End"/>
+
+                                    <Label Text="|" Grid.Row="1" Grid.Column="1" HorizontalTextAlignment="Center"/>
+                                    <Label Text="Valor Devido"  Grid.Row="1" Grid.Column="2"/>
+                                    <Label Text="{Binding ValorDevido, StringFormat='{0:C}'}" Grid.Row="1" Grid.Column="3" HorizontalTextAlignment="End"/>
+
+                                    <Label Text="|" Grid.Row="2" Grid.Column="1" HorizontalTextAlignment="Center"/>
+                                    <Label Text="Percentual Juros"  Grid.Row="2" Grid.Column="2"/>
+                                    <Label Text="{Binding PercentualJuros, StringFormat='{0:N2}'}" Grid.Row="2" Grid.Column="3" HorizontalTextAlignment="End"/>
+
+                                    <Label Text="|" Grid.Row="3" Grid.Column="1" HorizontalTextAlignment="Center"/>
+                                    <Label Text="Saldo"  Grid.Row="3" Grid.Column="2"/>
+                                    <Label Text="{Binding SaldoAtual, StringFormat='{0:C}'}" Grid.Row="3" Grid.Column="3" HorizontalTextAlignment="End"/>
+
+                                    <Label Text="|" Grid.Row="4" Grid.Column="1" HorizontalTextAlignment="Center"/>
+                                    <Label Text="Saldo Atualizado"  Grid.Row="4" Grid.Column="2" FontAttributes="Bold"/>
+                                    <Label Text="{Binding SaldoAtualizado, StringFormat='{0:C}'}" Grid.Row="4" Grid.Column="3" FontAttributes="Bold" HorizontalTextAlignment="End"/>
+                                </Grid>
+                            </ViewCell>
+                        </DataTemplate>
+                    </ListView.ItemTemplate>
+                </ListView>
+            </Grid>
+        </components:GradientColorStack>
+    </ContentPage.Content>
+</ContentPage>

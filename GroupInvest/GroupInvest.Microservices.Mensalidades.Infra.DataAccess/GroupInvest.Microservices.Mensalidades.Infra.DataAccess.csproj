@@ -1,0 +1,21 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netstandard2.1</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Remove="Migrations\20200831071309_emprestimos-pagamentos.cs" />
+    <Compile Remove="Migrations\20200831071309_emprestimos-pagamentos.Designer.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Pomelo.EntityFrameworkCore.MySql" Version="3.2.7" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\GroupInvest.Common.Infrastructure.DataAccess\GroupInvest.Common.Infrastructure.DataAccess.csproj" />
+    <ProjectReference Include="..\GroupInvest.Microservices.Mensalidades.Domain\GroupInvest.Microservices.Mensalidades.Domain.csproj" />
+  </ItemGroup>
+
+</Project>

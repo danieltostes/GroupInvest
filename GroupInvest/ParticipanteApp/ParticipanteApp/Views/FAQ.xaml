@@ -1,0 +1,48 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:components="clr-namespace:ParticipanteApp.Components"
+             mc:Ignorable="d"
+             x:Class="ParticipanteApp.Views.FAQ">
+    <ContentPage.Resources>
+        <Style TargetType="{x:Type Label}" x:Key="titulo">
+            <Setter Property="FontSize" Value="18"/>
+            <Setter Property="FontAttributes" Value="Bold"/>
+        </Style>
+
+        <Style TargetType="{x:Type Label}" x:Key="topico">
+            <Setter Property="FontAttributes" Value="Bold"/>
+        </Style>
+    </ContentPage.Resources>
+    <ContentPage.Content>
+        <ScrollView>
+            <components:GradientColorStack VerticalOptions="FillAndExpand" Padding="20, 20, 20, 20" Spacing="20">
+                <Label Text="Regras do Fundo de Investimento" Style="{StaticResource titulo}"/>
+
+                <Label Text="Mensalidades" Style="{StaticResource topico}"/>
+
+                <Label Text="1. Mensalidades pagas após a data de vencimento (dia 15 de todo mês) serão acrescidas da taxa de 10% de juros simples. Ou seja, por mais que uma mensalidade esteja atrasada por vários meses, os juros de 10% são cobrados uma única vez."
+                   LineBreakMode="WordWrap"/>
+
+                <Label Text="Empréstimos" Style="{StaticResource topico}"/>
+
+                <Label Text="2. O valor limite para um empréstimo é de três vezes o valor acumulado pelo participante no ato do empréstimo. Valores superiores só serão concedidos mediante aprovação do administrador do fundo."
+                   LineBreakMode="WordWrap"/>
+
+                <Label Text="3. A taxa de juros para empréstimo é de 10% tendo seu vencimento sempre no mesmo dia do mês subsequente à tomada do empréstimo."
+                   LineBreakMode="WordWrap"/>
+
+                <Label Text="4. Empréstimos pagos após a data de vencimento serão acrescidos de taxa de 15% de juros simples. Regra semelhante à de mensalidades pagas após o vencimento."
+                   LineBreakMode="WordWrap"/>
+
+                <Label Text="5. O valor mínimo para pagamento parcial de um empréstimo é o valor da taxa de juros."
+                   LineBreakMode="WordWrap"/>
+
+                <Label Text="6. Para pagamentos parciais, do valor devido (valor + taxa de juros) será abatido o valor pago. Esse saldo restante terá a taxa de juros aplicada novamente e esse novo valor será o valor devido para o próximo pagamento."
+                   LineBreakMode="WordWrap"/>
+            </components:GradientColorStack>
+        </ScrollView>
+    </ContentPage.Content>
+</ContentPage>

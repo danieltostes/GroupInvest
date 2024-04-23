@@ -1,0 +1,67 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:components="clr-namespace:ParticipanteApp.Components"
+             mc:Ignorable="d"
+             x:Class="ParticipanteApp.Views.Login">
+    <ContentPage.Resources>
+        <Style TargetType="{x:Type Label}">
+            <Setter Property="TextColor" Value="#FFFFFF"/>
+        </Style>
+
+        <Style TargetType="{x:Type Button}">
+            <Setter Property="BackgroundColor" Value="#FFFFFF"/>
+            <Setter Property="TextColor" Value="#346FB7"/>
+            <Setter Property="CornerRadius" Value="50"/>
+            <Setter Property="BorderWidth" Value="0"/>
+            <Setter Property="FontSize" Value="16"/>
+            <Setter Property="FontAttributes" Value="Bold"/>
+        </Style>
+    </ContentPage.Resources>
+    <ContentPage.Content>
+        <AbsoluteLayout>
+            <Grid VerticalOptions="FillAndExpand" RowSpacing="0" AbsoluteLayout.LayoutFlags="All" AbsoluteLayout.LayoutBounds="0,0,1,1">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="*"/>
+                </Grid.RowDefinitions>
+                <Grid Grid.Row="0">
+                    <components:GradientColorStack StartColor="#346FB7" EndColor="#003370">
+                        <Grid VerticalOptions="FillAndExpand" RowSpacing="0">
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="4*" />
+                                <RowDefinition Height="1*" />
+                                <RowDefinition Height="1*" />
+                                <RowDefinition Height="1*" />
+                                <RowDefinition Height="1*" />
+                                <RowDefinition Height="2*" />
+                            </Grid.RowDefinitions>
+                            <Image Source="logotipo_app.png" Grid.Row="0" VerticalOptions="Center" HorizontalOptions="Center" />
+                            <StackLayout Grid.Row="1">
+                                <StackLayout Orientation="Horizontal" HorizontalOptions="FillAndExpand" Padding="40, 0, 40, 0">
+                                    <Image Source="icone_email.png" VerticalOptions="Center" HorizontalOptions="Center" />
+                                    <components:CustomEntry x:Name="entryEmail" HorizontalOptions="FillAndExpand" HeightRequest="40" Placeholder="e-mail" PlaceholderColor="#3F75B7" />
+                                </StackLayout>
+                                <BoxView Color="{StaticResource CorLinhaEntryImagem}" VerticalOptions="Start" HorizontalOptions="FillAndExpand" HeightRequest="1" Margin="40, -8, 40, 0" />
+                            </StackLayout>
+                            <StackLayout Grid.Row="2">
+                                <StackLayout Orientation="Horizontal" HorizontalOptions="FillAndExpand" Padding="40, 0, 40, 0">
+                                    <Image Source="icone_senha.png" VerticalOptions="Center" HorizontalOptions="Center" />
+                                    <components:CustomEntry x:Name="entrySenha" IsPassword="True" HorizontalOptions="FillAndExpand" BorderNone="True" HeightRequest="40" Placeholder="senha" PlaceholderColor="#3F75B7" />
+                                </StackLayout>
+                                <BoxView Color="{StaticResource CorLinhaEntryImagem}" VerticalOptions="Start" HorizontalOptions="FillAndExpand" HeightRequest="1" Margin="40, -8, 40, 0" />
+                            </StackLayout>
+                            <Button x:Name="ButtonLogin" Grid.Row="3" Text="LOGIN" Margin="80,0,80,0" VerticalOptions="Center" HeightRequest="40" Clicked="ButtonLogin_Clicked" />
+                            <Label Grid.Row="4" Text="OU" VerticalOptions="CenterAndExpand" HorizontalOptions="CenterAndExpand"/>
+                            <Label Grid.Row="5" Text="Redefinir minha senha" HorizontalOptions="CenterAndExpand" TextDecorations="Underline" />
+                        </Grid>
+                    </components:GradientColorStack>
+                </Grid>
+            </Grid>
+            <Frame Style="{StaticResource background_loading}" IsVisible="{Binding IsLoading}">
+                <components:CustomActivityIndicator IsRunning="{Binding IsLoading}" />
+            </Frame>
+        </AbsoluteLayout>
+    </ContentPage.Content>
+</ContentPage>

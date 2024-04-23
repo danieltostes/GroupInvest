@@ -1,0 +1,17 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netstandard2.1</TargetFramework>
+    <UserSecretsId>68c0f5a1-ba14-4186-a20b-edd5ef8f780d</UserSecretsId>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\GroupInvest.Common.Application\GroupInvest.Common.Application.csproj" />
+    <ProjectReference Include="..\GroupInvest.Microservices.AppUsuarios.Domain\GroupInvest.Microservices.AppUsuarios.Domain.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="AutoMapper" Version="10.0.0" />
+  </ItemGroup>
+
+</Project>

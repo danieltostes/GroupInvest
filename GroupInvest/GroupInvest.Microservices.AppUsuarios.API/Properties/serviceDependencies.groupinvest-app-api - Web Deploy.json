@@ -1,0 +1,8 @@
+{
+  "dependencies": {
+    "apis1": {
+      "resourceId": "/subscriptions/[parameters('subscriptionId')]/resourceGroups/[parameters('resourceGroupName')]/providers/Microsoft.ApiManagement/service/GroupInvestMicroservicesAppUsuariosAPIapi/apis/GroupInvestMicroservicesAppUsuariosAPI",
+      "type": "apis.azure"
+    }
+  }
+}

@@ -1,0 +1,22 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>Exe</OutputType>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
+    <UserSecretsId>8f2ca0e3-e8af-41dc-a398-989f400b5cde</UserSecretsId>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.Azure.WebJobs" Version="3.0.18" />
+    <PackageReference Include="Microsoft.Azure.WebJobs.Extensions.ServiceBus" Version="4.1.2" />
+    <PackageReference Include="Microsoft.Extensions.Configuration.UserSecrets" Version="3.1.13" />
+    <PackageReference Include="Microsoft.Extensions.Hosting" Version="3.1.8" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\GroupInvest.Common.Infrastructure.Messaging\GroupInvest.Common.Infrastructure.Messaging.csproj" />
+    <ProjectReference Include="..\GroupInvest.Microservices.Auditoria.Application\GroupInvest.Microservices.Auditoria.Application.csproj" />
+    <ProjectReference Include="..\GroupInvest.Microservices.Auditoria.Infra.DataAccess\GroupInvest.Microservices.Auditoria.Infra.DataAccess.csproj" />
+  </ItemGroup>
+
+</Project>

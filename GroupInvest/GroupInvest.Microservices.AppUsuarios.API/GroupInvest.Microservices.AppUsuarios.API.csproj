@@ -1,0 +1,25 @@
+﻿<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>net6.0</TargetFramework>
+    <UserSecretsId>4608d82a-98ee-4c6e-967a-46d5c08f2c52</UserSecretsId>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="AutoMapper" Version="10.0.0" />
+    <PackageReference Include="IdentityServer4.AccessTokenValidation" Version="3.0.1" />
+    <PackageReference Include="Microsoft.AspNetCore.Mvc.NewtonsoftJson" Version="3.1.8" />
+    <PackageReference Include="Microsoft.AspNetCore.Mvc.Versioning" Version="4.1.1" />
+    <PackageReference Include="Microsoft.AspNetCore.Mvc.Versioning.ApiExplorer" Version="4.1.1" />
+    <PackageReference Include="MongoDB.Driver" Version="2.18.0" />
+    <PackageReference Include="Swashbuckle.AspNetCore" Version="6.4.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\GroupInvest.Common.Infrastructure.Messaging\GroupInvest.Common.Infrastructure.Messaging.csproj" />
+    <ProjectReference Include="..\GroupInvest.Microservices.AppUsuarios.Application\GroupInvest.Microservices.AppUsuarios.Application.csproj" />
+    <ProjectReference Include="..\GroupInvest.Microservices.AppUsuarios.Infra.DataAccess\GroupInvest.Microservices.AppUsuarios.Infra.DataAccess.csproj" />
+  </ItemGroup>
+
+
+</Project>

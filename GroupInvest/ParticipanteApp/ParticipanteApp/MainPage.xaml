@@ -1,0 +1,15 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<TabbedPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:android="clr-namespace:Xamarin.Forms.PlatformConfiguration.AndroidSpecific;assembly=Xamarin.Forms.Core"
+             android:TabbedPage.ToolbarPlacement="Bottom"
+             xmlns:pages="clr-namespace:ParticipanteApp.Views"
+             mc:Ignorable="d"
+             x:Class="ParticipanteApp.MainPage">
+    <pages:Dashboard IconImageSource="icone_tab_dashboard.png" Title="Dashboard"/>
+    <pages:Mensalidades IconImageSource="icone_tab_mensalidades.png" Title="Mensalidades"/>
+    <pages:Emprestimos IconImageSource="icone_tab_emprestimos.png" Title="Empréstimos"/>
+    <pages:FAQ IconImageSource="icone_tab_faq.png" Title="FAQ"/>
+</TabbedPage>
