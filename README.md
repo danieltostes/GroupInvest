@@ -47,7 +47,7 @@ O fundo também tem o objetivo de fornecer crédito aos participantes com juros 
 Os empréstimos são similares às mensalidades com a diferença que possuem duas taxas de juros específicas. Uma para o empréstimo em situação normal que é a taxa base de juros e outra para empréstimo em atraso, quando a taxa base é substituída pela taxa em atraso (também juros simples).
 Ao final do período, todo o valor acumulado pelos participantes (mensalidades e empréstimos) é distribuído entre todos respeitando as proporções de cotas de cada um deles. Sendo a soma de todas as cotas dos participantes 100% e a cota individual o percentual correspondente ao valor valor acumulado no período.
 
-<p>(<a href="#top">Voltar ao topo</a>)</p>
+<p>:top: <a href="#top">Voltar ao topo</a></p>
 
 ## Definição de Termos
 
@@ -78,12 +78,12 @@ Caso o participante queira continuar com um número superior de cotas, o adminis
 
 Importante ressaltar que a redistribuição de cotas é referente unicamente às mensalidades, não tendo atuação sobre os empréstimos contraídos pelo participante. Caso haja atraso empréstimo em aberto, tudo se mantém com o fluxo normal de empréstimos.
 
-<p>(<a href="#top">Voltar ao topo</a>)</p>
+<p>:top: <a href="#top">Voltar ao topo</a></p>
 
 ## Solução Proposta
 A solução proposta consiste no desenvolvimento de um aplicativo, onde os participantes ativos no período possam fazer o acompanhamento das informações referentes aos seus empréstimos, pagamentos, mensalidades e rendimentos previstos no período, além de uma aplicação onde os gestores do fundo realizarão todas as atividades administrativas, como cadastramento de participantes, adesões, concessões de empréstimos, encerramento e cálculo dos valores a serem distribuídos, dentre outras possibilidades.
 
-<p>(<a href="#top">Voltar ao topo</a>)</p>
+<p>:top: <a href="#top">Voltar ao topo</a></p>
 
 ## Funcionalidades do Aplicativo
 
@@ -92,39 +92,51 @@ A solução proposta consiste no desenvolvimento de um aplicativo, onde os parti
 
 Primeira tela ao abrir o aplicativo. Tem a responsabilidade de verificar se o participante já está autenticado e se o token gravado no aplicativo ainda é válido. O token tem validade de 24h e após esse período é necessária uma nova autenticação do participante.
 
+<p>:top: <a href="#top">Voltar ao topo</a></p>
+
 ### Login
 ![Login](Imagens/mockup_login.png)
 
 Tela para autenticação dos participantes. Envia os dados para a API e, em caso de autenticação do participante, recebe o token e registra no aplicativo. Este token utiliza o padrão JWT e armazena informações sobre a identidade do participante para que nas futuras requisições os dados relacionados a este participante sejam entregues pela API.
+
+<p>:top: <a href="#top">Voltar ao topo</a></p>
 
 ### Dashboard
 ![Login](Imagens/mockup_dashboard.png)
 
 Tela principal do aplicativo. Fornece informações referentes ao investimento do participante. Valor total arrecadado, rendimento parcial considerando as movimentações de todos os participantes do fundo de investimento e últimas transações realizadas pelo participante.
 
+<p>:top: <a href="#top">Voltar ao topo</a></p>
+
 ### Mensalidades
 ![Mensalidades](Imagens/mockup_mensalidades.png)
 
 Visão de todas as mensalidades do período. Informações sobre o pagamento incluindo valores de juros e valor total pago.
+
+<p>:top: <a href="#top">Voltar ao topo</a></p>
 
 ### Empréstimos
 ![Emprestimos](Imagens/mockup_emprestimos.png)
 
 Visão de eventuais empréstimos contraídos pelo participante. Nesta tela é apresentada uma visão resumida sobre os empréstimos com a data do empréstimo, valor tomado e status de pagamento. Ao tocar em um empréstimo, uma visão detalhada será apresentada.
 
+<p>:top: <a href="#top">Voltar ao topo</a></p>
+
 ### Detalhamento do Empréstimo
 ![Login](Imagens/mockup_detalhamento_emprestimo.png)
 
 Visão detalhada do empréstimo com o extrato de todas as movimentações e cálculos de eventuais parcelas futuras de um mesmo empréstimo. Isso permite que os participantes possam acompanhar em detalhes e sem dúvidas todo o histórico de pagamento daquele empréstimo.
+
+<p>:top: <a href="#top">Voltar ao topo</a></p>
 
 ### Regras do Fundo de Reserva
 ![Emprestimos](Imagens/mockup_regras.png)
 
 Visão que fornece as principais regras de funcionamento do fundo de reserva. É comum hoje que novos participantes precisem entrar em contato com os gestores do fundo para tirar dúvidas sobre o funcionamento do fundo. A cada período novos participantes costumam entrar para o fundo, portanto é interessante descrever as regras dessa forma.
 
-<p>(<a href="#top">Voltar ao topo</a>)</p>
+<p>:top: <a href="#top">Voltar ao topo</a></p>
 
 ## Vídeo de Apresentação
-[Demonstração no Youtube](https://youtu.be/3A5YSiEw6X0)
+:clapper: [Demonstração no Youtube](https://youtu.be/3A5YSiEw6X0)
 
-<p>(<a href="#top">Voltar ao topo</a>)</p>
+<p><a href="#top">:top: Voltar ao topo</a></p>
